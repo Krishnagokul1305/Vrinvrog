@@ -30,7 +30,7 @@ listToggle.forEach(element => {
   revealsection.forEach((section)=>{
     let windowheight=window.innerHeight
     let revealtop=section.getBoundingClientRect().top
-    let revealpoint=210;
+    let revealpoint=100;
     if(revealtop<windowheight-revealpoint){
       section.classList.add('active')
     }
@@ -60,18 +60,18 @@ const card3=document.querySelector('.card-3')
 const card4=document.querySelector('.card-4')
 const card5=document.querySelector('.card-5')
 window.addEventListener('scroll', function() {
-  var worksectionHeight = getTotalheightTop(document.getElementById('work'))-250; 
+  const worksectionHeight = getTotalheightTop(document.getElementById('work'))-250; 
   if (window.scrollY > worksectionHeight) {
     card1.classList.add('animate-card');
-    card1.style.animation = `appear 1s both 1s`;
+    card1.style.animation = `appear 1s both .5s`;
     card2.classList.add('animate-card');
-    card2.style.animation = `appear 1s both 1.5s`;
+    card2.style.animation = `appear 1s both 1s`;
     card3.classList.add('animate-card');
-    card3.style.animation = `appear 1s both 2s`;
+    card3.style.animation = `appear 1s both 1.5s`;
     card4.classList.add('animate-card');
-    card4.style.animation = `appear 1s both 2.5s`;
+    card4.style.animation = `appear 1s both 2s`;
     card5.classList.add('animate-card');
-    card5.style.animation = `appear 1s both 3s`;
+    card5.style.animation = `appear 1s both 2.5s`;
   }
   else {
     card1.classList.remove('animate-card');
@@ -83,7 +83,7 @@ window.addEventListener('scroll', function() {
 });
 window.addEventListener('scroll', function() { 
   const cards=document.querySelectorAll('.service-card')
-  var servicesectionHeight = getTotalheightTop(document.getElementById('service'))-400; 
+  const servicesectionHeight = getTotalheightTop(document.getElementById('service'))-400; 
   if (window.scrollY > servicesectionHeight) {
     cards.forEach((card,index)=>{
       let delay = index * 0.2 + 0.5;
@@ -97,3 +97,19 @@ window.addEventListener('scroll', function() {
     })
   }
   })
+  window.addEventListener('scroll', function() { 
+    const cards=document.querySelectorAll('.work-card-1')
+    const servicesectionHeight = getTotalheightTop(document.getElementById('service'))-200; 
+    if (window.scrollY > servicesectionHeight) {
+      cards.forEach((card,index)=>{
+        let delay = index * 0.2 + 0.5;
+        card.style.animation = `appear 1s both ${delay}s`;
+        card.classList.add('animate-card');
+      })
+    }
+    else{
+      cards.forEach((card)=>{
+        card.classList.remove('animate-card');
+      })
+    }
+    })

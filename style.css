@@ -693,6 +693,6 @@ footer li{
   transform: translateY(50px);
   animation: appear 1s both .5s;
 }
-.card-1,.card-2,.card-3,.card-4,.card-5{
+.work-card-1{
   opacity: 0;
 }
