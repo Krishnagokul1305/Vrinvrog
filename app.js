@@ -24,7 +24,6 @@ listToggle.forEach(element => {
       navbar.classList.remove('scrolled');
     }
   });
- const cards=document.querySelectorAll('.service-card')
  window.addEventListener('scroll',reveal);
  function reveal(){
   const revealsection=document.querySelectorAll('.reveal');
@@ -62,19 +61,6 @@ const card4=document.querySelector('.card-4')
 const card5=document.querySelector('.card-5')
 window.addEventListener('scroll', function() {
   var worksectionHeight = getTotalheightTop(document.getElementById('work'))-250; 
-  var servicesectionHeight = getTotalheightTop(document.getElementById('service'))-400; 
-  if (window.scrollY > servicesectionHeight) {
-    cards.forEach((card,index)=>{
-      let delay = index * 0.2 + 0.5;
-      card.style.animation = `appear 1s both ${delay}s`;
-      card.classList.add('animate-card');
-    })
-  }
-  else{
-    cards.forEach((card)=>{
-      card.classList.remove('animate-card');
-    })
-  }
   if (window.scrollY > worksectionHeight) {
     card1.classList.add('animate-card');
     card1.style.animation = `appear 1s both 1s`;
@@ -95,3 +81,19 @@ window.addEventListener('scroll', function() {
     card5.classList.remove('animate-card');
   }
 });
+window.addEventListener('scroll', function() { 
+  const cards=document.querySelectorAll('.service-card')
+  var servicesectionHeight = getTotalheightTop(document.getElementById('service'))-400; 
+  if (window.scrollY > servicesectionHeight) {
+    cards.forEach((card,index)=>{
+      let delay = index * 0.2 + 0.5;
+      card.style.animation = `appear 1s both ${delay}s`;
+      card.classList.add('animate-card');
+    })
+  }
+  else{
+    cards.forEach((card)=>{
+      card.classList.remove('animate-card');
+    })
+  }
+  })

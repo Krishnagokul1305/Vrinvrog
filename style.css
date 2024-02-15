@@ -414,6 +414,7 @@ section{
 .work-card{
   max-width: 600px;
   position: relative;
+  z-index: 1;
 }
 .right-card .work-card{
   margin-top: 230px;
